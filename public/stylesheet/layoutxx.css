@@ -1,0 +1,290 @@
+
+body{
+    margin : 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Header--------*/
+
+.wrap{
+    width: 90%;
+    margin : auto;
+}
+.header{
+    background-color :#ff789e;
+    padding:  0.5em;
+    border-bottom: 3px dotted white ;
+
+}
+
+.header-content {
+    color : white;
+    margin : auto;
+
+}
+
+.header-content-left,.header.content.right{
+    float : left;
+}
+
+.header-content-left{
+    padding-right: 20rem;
+
+}
+
+.header-content-right span{
+    padding-right : 0.5rem;
+}
+
+.header-content-right i, .header-content-left i{
+    padding-right : 0.5rem;
+}
+
+.header-content a{
+    text-decoration: none;
+    color : white;
+}
+
+/*START NAV */
+
+
+.nav .logo-brand{
+    padding : 1.5rem;
+    float : left;
+    width : 30%;
+}
+
+.nav-content-right{
+    padding : 1.5rem;
+}
+
+/*SEARCH BOX */
+.nav .search-bar {
+    float : left;
+    width : 60%;
+
+}
+
+form.search-box input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #ff789e;
+    border-radius : 25px;
+    float: left;
+    width: 90%;
+    background: white;
+    color : grey;
+}
+
+form.search-box button {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: white;
+    color: #ff789e;
+    font-size: 17px;
+    border: 1px solid #ff789e;
+    border-radius : 25px;
+    cursor: pointer;
+}
+
+
+form.search-box::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/*NAV BAR */
+.nav-bar ul {
+    list-style-type: none;
+    background-color: white;
+
+}
+
+.nav-bar ul li {
+    float: left;
+}
+
+.nav-bar li a {
+    display: block;
+    color: grey;
+    text-align: center;
+    padding: 0.4rem 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.nav-bar li a:hover {
+    color: #ff789e;
+}
+
+.nav-bar li a:active {
+    color: #ff789e
+}
+
+.clear{
+    clear:both;
+}
+/*footer*/
+.footer{
+	padding-top: 150px;
+	width: 100%;
+}
+.footer p{
+	font-size: 16px;
+	color: gray;
+}
+.footer-info{
+	text-align: center;
+}
+.footer-info1{
+	float: left;
+	width: 10%;
+}
+.footer-info2{
+	float: left;
+	width: 20%;
+}
+.footer-info3{
+	float: left;
+	width: 25%;
+}
+.footer-info4{
+	float: left;
+	width: 25%;
+}
+.footer-info5{
+	float: left;
+	width: 20%;
+}
+.footer-contact{
+	padding-top: 100px;
+}
+.footer-contact1{
+	float: left;
+	width: 30%;
+}
+.footer-contact2{
+	float: left;
+	width: 30%;
+}
+.footer-contact3{
+	float: left;
+	width: 30%;
+}
+.email-form1{
+	float: left;
+}
+.text-search{
+	width: 250px;
+	height: 29.99px;
+}
+.email-botton{
+	width: 100px;
+	height:35px;
+	border:0;
+	background: none;
+	background-color:#f05077;
+	color: white;
+	font-size: 16px;
+}
+.footer-contact1a{
+	border-bottom: 1px solid #e8e8e8;
+}
+.footer-contact2 h1{
+	color: gray;
+	font-size: 20px;
+	text-align: left;
+}
+.place-icon{
+	float: left;
+}
+.place-icon i{
+	color: #f05077;
+	font-size: 40px;
+}
+.place-content{
+	margin-left: 40px;
+}
+.place-content h3{
+	color: gray;
+}
+.hotline-icon{
+	float: left;
+}
+.hotline-icon i{
+	color: #f05077;
+	font-size: 30px;
+}
+.hotline-content{
+	margin-left: 40px;
+}
+.time-icon{
+	float: left;
+}
+.time-icon i{
+	color: #f05077;
+	font-size: 30px;
+}
+.time-content{
+	margin-left: 40px;
+}
+.email-icon{
+	float: left;
+}
+.email-icon i{
+	color: #f05077;
+	font-size: 20px;
+}
+.email-content{
+	margin-left: 40px;
+}
+.website-icon{
+	float: left;
+}
+.website-icon i{
+	color: #f05077;
+	font-size: 25px;
+}
+.website-content{
+	margin-left: 40px;
+}
+.footer-contact3 h1{
+	color: gray;
+	font-size: 19px;
+}
+.footer-contact3 ul{
+padding-left: 20px;
+padding-top: 10px;
+width: 260px;
+list-style-type: none;
+text-align: left;
+}
+.footer-contact3 li{
+ width: 200px;
+ height: 40px;
+ line-height: 40px;
+ border-bottom: 1px solid #e8e8e8;
+ padding: 0 1em;
+}
+.footer-contact3 ul li{
+ width: 150px;
+ height: 30px;
+ line-height: 30px;
+ border-bottom: 1px solid #e8e8e8;
+ padding: 0 1em;
+}
+.footer-contact3 ul li a{
+ text-decoration: none;
+ color: gray;
+ display: block;
+ font-size: 17px;
+}
+h1{
+  color: #ff789e;
+  text-align: center;
+  padding-bottom: 20px;
+}

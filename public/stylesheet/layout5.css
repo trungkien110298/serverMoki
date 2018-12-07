@@ -1,0 +1,401 @@
+body{
+    margin : 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+}
+
+/*Header--------*/
+
+.wrap{
+    width: 90%;
+    margin : auto;
+}
+.header{
+    background-color :#ff789e;
+    padding:  0.5em;
+    border-bottom: 3px dotted white ;
+
+}
+
+.header-content {
+    color : white;
+    margin : auto;
+
+}
+
+.header-content-left,.header.content.right{
+    float : left;
+}
+
+.header-content-left{
+    padding-right: 18rem;
+
+}
+
+.header-content-right span{
+    padding-right : 0.5rem;
+}
+
+.header-content-right i, .header-content-left i{
+    padding-right : 0.5rem;
+}
+
+.header-content a{
+    text-decoration: none;
+    color : white;
+}
+
+/*START NAV */
+
+
+.nav .logo-brand{
+    padding : 01.5rem;
+    float : left;
+    width : 30%;
+}
+
+.nav-content-right{
+    padding : 1.5rem;
+}
+
+/*SEARCH BOX */
+.nav .search-bar {
+    float : left;
+    width : 60%;
+
+}
+
+form.search-box input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #ff789e;
+    border-radius : 25px;
+    float: left;
+    width: 90%;
+    background: white;
+    color : grey;
+}
+
+form.search-box button {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: white;
+    color: #ff789e;
+    font-size: 17px;
+    border: 1px solid #ff789e;
+    border-radius : 25px;
+    cursor: pointer;
+}
+
+
+form.search-box::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/*NAV BAR */
+
+
+/**/
+.nav-bar ul {
+    list-style-type: none;
+    background-color: white;
+
+}
+
+.nav-bar ul li {
+    float: left;
+}
+
+.nav-bar li a {
+    display: block;
+    color: grey;
+    text-align: center;
+    padding: 0.4rem 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.nav-bar li a:hover {
+    color: #ff789e;
+}
+
+.nav-bar li a:active {
+    color: #ff789e
+}
+
+.clear{
+    clear:both;
+}
+
+/*START MAIN CONTENT LOGIN SCREEN*/
+
+.login-nav{
+    color : #aeb5c6;
+    margin : auto ;
+    display : flex;
+    background-color : #ffffff;
+    padding : 0.5rem;
+}
+.login-nav-content{
+    width: 85%;
+    margin : auto;
+    border : solid;
+    border : #efefef;
+    background-color: #efefef;
+}
+.login-main{
+    margin : auto;
+    background-color: #f1f1f1;
+    display : flex;
+
+}
+
+.login-main-content{
+    width : 50%;
+    background-color : #ffffff;
+    margin : 1rem auto;
+    border-radius: 10px;
+
+}
+
+.login-nav-content ul{
+    list-style-type: none;
+
+}
+
+.login-nav-content ul li {
+    float : left;
+    width : 18%;
+    border-right :solid white;
+}
+
+.login-nav-content li a {
+    display: block;
+    color: #aebad2;
+    text-align: center;
+    padding: 0.4rem 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+
+}
+
+.login-main-content h4{
+    color :#aebad2;
+    text-align: center;
+}
+
+.login-view-content input[type=text]  {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #ff789e;
+    border-radius : 25px;
+    float: left;
+    width: 90%;
+    background: white;
+    color : grey;
+    margin : 0.5rem;
+    display: block;
+
+}
+
+.login-view-content input[type=submit]  {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #ff789e;
+    border-radius : 25px;
+    float: left;
+    width: 90%;
+    background: #ff789e;
+    color : #ffffff;
+    margin : 0.5rem;
+    display: block;
+    cursor: pointer;
+}
+
+.login-view .login-view-content {
+    width : 50%;
+    margin : auto;
+}
+.login-view label{
+    color :#202838;
+    display: block;
+    margin : 0.5rem;
+}
+
+.login-view-content input[type = submit]:hover{
+    background-color: #ff0084;
+}
+.footer{
+	padding-top: 50px;
+	width: 100%;
+	background-image: url(/image1/46479926_1235267613305918_3421459398550093824_n.png);
+}
+.footer p{
+	font-size: 18px;
+	color: gray;
+}
+.footer-info{
+	padding-left: 150px;
+	text-align: center;
+	background-image: url(/image1/46479926_1235267613305918_3421459398550093824_n.png);
+}
+.footer-info1{
+	float: left;
+	width: 10%;
+}
+.footer-info2{
+	float: left;
+	width: 15%;
+	margin-left: 20px;
+}
+.footer-info3{
+	float: left;
+	width: 20%;
+	margin-left: 20px;
+}
+.footer-info4{
+	float: left;
+	width: 20%;
+	margin-left: 20px;
+}
+.footer-info5{
+	float: left;
+	width: 20%;
+	margin-left: 20px;
+}
+.footer-contact{
+	padding-top: 10px;
+	background-image: url(/image1/46479926_1235267613305918_3421459398550093824_n.png);
+}
+.footer-contact1{
+	float: left;
+	width: 33%;
+	padding-left: 120px;
+	background-image: url(/image1/46479926_1235267613305918_3421459398550093824_n.png);
+}
+.footer-contact2{
+	float: left;
+	width: 30%;
+	margin-left: 50px;
+	background-image: url(/image1/46479926_1235267613305918_3421459398550093824_n.png);
+}
+.footer-contact3{
+	float: left;
+	width: 20%;
+	margin-left: 40px;
+	background-image: url(/image1/46479926_1235267613305918_3421459398550093824_n.png);
+}
+.email-form1{
+	float: left;
+}
+.text-search{
+	width: 250px;
+	height: 29.99px;
+}
+.email-botton{
+	width: 100px;
+	height:35px;
+	border:0;
+	background: none;
+	background-color:#f05077;
+	color: white;
+	font-size: 16px;
+}
+.footer-contact1a{
+	border-bottom: 1px solid #e8e8e8;
+}
+.footer-contact2 h1{
+	color: gray;
+	font-size: 20px;
+	text-align: left;
+}
+.place-icon{
+	float: left;
+}
+.place-icon i{
+	color: #f05077;
+	font-size: 40px;
+}
+.place-content{
+	margin-left: 40px;
+}
+.place-content h3{
+	color: gray;
+}
+.hotline-icon{
+	float: left;
+}
+.hotline-icon i{
+	color: #f05077;
+	font-size: 30px;
+}
+.hotline-content{
+	margin-left: 40px;
+}
+.time-icon{
+	float: left;
+}
+.time-icon i{
+	color: #f05077;
+	font-size: 30px;
+}
+.time-content{
+	margin-left: 40px;
+}
+.email-icon{
+	float: left;
+}
+.email-icon i{
+	color: #f05077;
+	font-size: 20px;
+}
+.email-content{
+	margin-left: 40px;
+}
+.website-icon{
+	float: left;
+}
+.website-icon i{
+	color: #f05077;
+	font-size: 25px;
+}
+.website-content{
+	margin-left: 40px;
+}
+.footer-contact3 h1{
+	color: gray;
+	font-size: 19px;
+}
+.footer-contact3 ul{
+padding-left: 20px;
+padding-top: 10px;
+width: 260px;
+list-style-type: none;
+text-align: left;
+}
+.footer-contact3 li{
+ width: 200px;
+ height: 40px;
+ line-height: 40px;
+ border-bottom: 1px solid #e8e8e8;
+ padding: 0 1em;
+}
+.footer-contact3 ul li{
+ width: 150px;
+ height: 30px;
+ line-height: 30px;
+ border-bottom: 1px solid #e8e8e8;
+ padding: 0 1em;
+}
+.footer-contact3 ul li a{
+ text-decoration: none;
+ color: gray;
+ display: block;
+ font-size: 17px;
+}
