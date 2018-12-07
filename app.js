@@ -1,63 +1,98 @@
-var express = require('express');   
+// Rerquire Node JS module
+var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
-var passport = require('passport');
 var config = require('./config/database');
+var hbs = require('express-handlebars')
 
-mongoose.connect(config.database, { useNewUrlParser: true } );
+// Set up Database
+mongoose.connect(config.database, { useNewUrlParser: true });
 mongoose.set('useCreateIndex', true);
 
-var api = require('./routes/api');
+// Require Routes
+var login = require('./routes/login');
+var signup = require('./routes/signup');
+var logout = require('./routes/logout');
+var creat_code_reset_password = require('./routes/creat_code_reset_password');
+var check_code_reset_password = require('./routes/check_code_reset_password');
+var sms_verify = require('./routes/sms_verify');
+var reset_password = require('./routes/reset_password');
+var check_password = require('./routes/check_password');
+var change_password = require('./routes/change_password');
+var get_user_setting = require('./routes/get_user_setting');
+var set_user_setting = require('./routes/set_user_setting');
+var get_user_info = require('./routes/get_user_info');
+var set_user_info = require('./routes/set_user_info');
 
+var get_list_blocks = require('./routes/get_list_blocks');
+var blocks = require('./routes/blocks');
+var get_comment_product = require('./routes/get_comment_products');
+var get_list_followed = require('./routes/get_list_followed');
+var get_list_following = require('./routes/get_list_following');
+var get_my_likes = require('./routes/get_my_likes');
+var like_product = require('./routes/like_product');
+var set_comment_product = require('./routes/set_comment_product');
+var set_follow_user = require('./routes/set_follow_user');
+
+// Creat server app
 var app = express();
 
-// view engine setup
+// View engine setup
+app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts/' }));
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'hbs');
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(morgan('dev'));
-app.use(passport.initialize());
 
-app.get('/', function(req, res) {
-    res.send('Page under construction.');
-});
+/// Router
 
-app.use('/', api);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
 
-// error handler
-app.use(function(err, req, res, next) {
-    // set locals, only providing error in development
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
+// Kien's API
+app.use('/api', signup);                        // Done!
+app.use('/api', login);                         // Done!
+app.use('/api', logout);                        // Done!
+app.use('/api', creat_code_reset_password);     // Done!
+app.use('/api', check_code_reset_password);     // Done!
+app.use('/api', sms_verify);                    // Done!
+app.use('/api', reset_password);                // Done!
+app.use('/api', check_password);                // Done!
+app.use('/api', change_password);               // Done!
+app.use('/api', get_user_setting);              // Done!
+app.use('/api', set_user_setting);              // Done!
+app.use('/api', get_user_info);                 // Done!
+app.use('/api', set_user_info);
 
-    // render the error page
-    res.status(err.status || 500);
-    res.render('home');
+// Vuong's API
+app.use('/api', get_list_blocks);
+app.use('/api', blocks);
+app.use('/api', get_comment_product);
+app.use('/api', get_list_followed);
+app.use('/api', get_list_following);
+app.use('/api', get_my_likes);
+app.use('/api', like_product);
+app.use('/api', set_comment_product);
+app.use('/api', set_follow_user);
+
+app.use('/gioithieu', (req, res) => {
+    res.render('gioithieu')
+})
+app.use('/login', (req, res) => {
+    res.render('login');
+})
+
+app.get('/', function (req, res) {
+    res.render('trangchu');
 });
 
 app.listen(3000, () => console.log('Server da khoi dong o cong 3000'));

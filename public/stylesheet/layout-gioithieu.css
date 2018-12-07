@@ -1,0 +1,538 @@
+
+@keyframes leftToRight{
+    0% {transform:  translateX(-100%)}
+    100% {transform: translateX(0%)}
+}
+@keyframes rightToLeft{
+    0% {transform:  translateX(100%)}
+    100% {transform: translateX(0%)}
+}
+@keyframes bottomToTop{
+    0% {transform:  translateY(100%)}
+    100% {transform: translateY(0%)}
+}
+@keyframes topToBottom{
+    0% {transform:  translateY(-100%)}
+    100% {transform: translateY(0%)}
+}
+
+@keyframes fadeIn{
+    0%{opacity: 0; width: 40%}
+    100%{opacity: 1; width:100%}
+}
+
+@keyframes pressUp{
+    0%{font-size: 1rem;}
+    50%{font-size: 3rem;}
+    100%{font-size: 1rem;}
+}
+
+@keyframes appear{
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+
+body{
+    margin : 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #303030;
+}
+
+/*Header--------*/
+
+.wrap-nav{
+    width: 100%;
+    margin : auto;
+}
+.header{
+    background-color :#ff789e;
+    padding:  0.5em;
+    border-bottom: 3px dotted white ;
+    
+}
+
+.header-content {
+    color : white;
+    margin : auto;
+    
+}
+
+.header-content-left,.header.content.right{
+    float : left;
+}
+
+.header-content-left{
+    padding-right: 18rem;
+
+}
+
+.header-content-right span{
+    padding-right : 0.5rem;
+}
+
+.header-content-right i, .header-content-left i{
+    padding-right : 0.5rem;
+}
+
+.header-content a{
+    text-decoration: none;
+    color : white;
+}
+
+/*START NAV */
+
+
+
+.nav{
+    width: 90%;
+    margin : 0px  auto;
+}
+.nav .logo-brand{
+    padding : 01.5rem;
+    float : left;
+    width : 30%;
+}
+
+.nav-content-right{
+    padding : 1.5rem;
+}
+
+/*SEARCH BOX */
+.nav .search-bar {
+    float : left;
+    width : 60%;
+    
+}
+
+form.search-box input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #ff789e;
+    border-radius : 25px;
+    float: left;
+    width: 80%;
+    background: white;
+    color : grey;
+}
+
+form.search-box button {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: white;
+    color: #ff789e;
+    font-size: 17px;
+    border: 1px solid #ff789e;
+    border-radius : 25px;
+    cursor: pointer;
+}
+
+
+form.search-box::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/*INTRO MAIN + NAV CONTEN */
+.intro-main{
+    background-image: url('/image/content-nav-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.intro-main-content{
+    width: 90%;
+    margin : 0px auto;
+}
+
+.intro-content{
+    overflow: hidden ;
+}
+.intro-content-left{
+    float: left;
+    width: 50%;
+    
+}
+ .intro-content-right{
+     float: left;
+    width: 50%;
+
+}
+.intro-content-right .qr-code,.intro-content-right .download-app{
+   float: left;
+   width: 50%;
+
+}
+
+.appstore,.android,.windows-phone{
+    margin : 1rem 0px;
+}
+.intro-content-right p{
+    font-size : 0.9rem;
+
+}
+
+
+
+
+/**/
+.nav-bar ul {
+    list-style-type: none;
+    background-color: white;
+    
+}
+
+.nav-bar ul li {
+    float: left;
+}
+
+.nav-bar li a {
+    display: block;
+    color: grey;
+    text-align: center;
+    padding: 0.4rem 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.nav-bar li a:hover {
+    color: #ff789e;
+}
+
+.nav-bar li a:active {
+    color: #ff789e
+}
+
+.clear{
+    clear:both;
+}
+
+
+/*END NAV*
+
+/*START MAIN CONTENT LOGIN SCREEN*/
+
+.login-nav{
+    color : #aeb5c6;
+    margin : auto ;
+    display : flex;
+    background-color : #ffffff;
+    padding : 0.5rem;
+}
+.login-nav-content{
+    width: 85%;
+    margin : auto;
+    border : solid;
+    border : #efefef;
+    background-color: #efefef;
+}
+.login-main{
+    margin : auto;
+    background-color: #f1f1f1;
+    display : flex;
+    
+}
+
+.login-main-content{
+    width : 50%;
+    background-color : #ffffff;
+    margin : 1rem auto;
+    border-radius: 10px;
+    
+}
+
+.login-nav-content ul{
+    list-style-type: none;
+  
+}
+
+.login-nav-content ul li {
+    float : left;
+    width : 18%;
+    border-right :solid white;
+}
+
+.login-nav-content li a {
+    display: block;
+    color: #aebad2;
+    text-align: center;
+    padding: 0.4rem 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    
+}
+
+.login-main-content h4{
+    color :#aebad2;
+    text-align: center;
+}
+
+.login-view-content input[type=text]  {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #ff789e;
+    border-radius : 25px;
+    float: left;
+    width: 90%;
+    background: white;
+    color : grey;
+    margin : 0.5rem;
+    display: block;
+
+}
+
+.login-view-content input[type=submit]  {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #ff789e;
+    border-radius : 25px;
+    float: left;
+    width: 90%;
+    background: #ff789e;
+    color : #ffffff;
+    margin : 0.5rem;
+    display: block;
+    cursor: pointer;
+}
+
+.login-view .login-view-content {
+    width : 50%;
+    margin : auto;
+}
+.login-view label{
+    color :#202838;
+    display: block;
+    margin : 0.5rem;
+}
+
+.login-view-content input[type = submit]:hover{
+    background-color: #ff0084;
+}
+
+/*BẮT ĐẦU TÍNH NĂNG NỔI BẬT */
+/* 1. TIN CẬY */
+
+.highligt-funtion{
+    width: 100%;
+    color: #303030;
+}
+.tin-cay-left, .tin-cay-right{
+    width: 50%;
+    float: left;
+}
+.tin-cay-1{
+    background-image: url('/image/background-highlight-function.png');
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+.tin-cay-right{
+    background-image: url('/image/background-highlight-function-right.png');
+    background-size: cover;
+    overflow: hidden;
+}
+.tin-cay-1 .stick-slide{
+    
+    border-right: 1px solid #303030;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    animation: leftToRight 1.3s linear;
+}
+
+.stick-slide{
+    width: 90%;
+    height: 20px;
+    background-color: #303030;
+}
+
+
+.tien-loi-left{
+    background-image: url('/image/background-highlight-function.png');
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+
+
+.tien-loi-left,.tien-loi-right{
+    width: 50%;
+    float: left;
+}
+
+.tien-loi-2{
+    background-image : url('/image/background-highlight-function-right.png');
+    background-size: cover;
+    overflow: hidden;
+}
+
+.tien-loi-2 .stick-slide{
+    border-left: 1px solid #303030;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-left: 10%;
+    animation: rightToLeft 1.5s linear;
+}
+
+.tien-loi-detail{
+    width:90%;
+    margin : 23% 5%;
+    padding-bottom: 20%;
+}
+.tien-loi-detail-alpha{
+    width: 28%;
+    float:left;
+    margin: 0px 2.5%;
+}
+
+/* 3 KHÁC BIỆT */
+.khac-biet-3{
+    background-image: url('/image/background-highlight-function.png');
+    background-size: cover;
+    overflow: hidden;
+}
+
+.background-common-pink{
+    background-image : url('/image/background-highlight-function-right.png');
+    background-size: cover;
+    overflow: hidden;
+}
+
+.background-common-pattern{
+    background-image: url('/image/background-highlight-function.png');
+    background-size: cover;
+    overflow: hidden;
+}
+
+.khac-biet-left, .khac-biet-right{
+    width: 50%;
+    float:left;
+}
+
+.khac-biet-right{
+    background-image : url('/image/background-highlight-function-right.png');
+    background-size: cover;
+    overflow: hidden;
+}
+
+.khac-biet-3 .stick-slide{
+    animation: leftToRight 1.5s linear;
+    border-right: 1px solid #303030;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+/*INTRO VIDEO*/
+
+.intro-video{
+    background-image: url('/image/background-highlight-function.png');
+    background-size: cover;
+    overflow: hidden;
+}
+
+/*BÁO CHÍ NÓI VỀ MOKI */
+.moki-talked-news{
+    padding: 2rem 0px;
+}
+.main-news, .more-news{
+    width: 40%;
+    margin: 0px 5%;
+    float: left;
+}
+.news-thumb-highlight p,.news-thumb-highlight h4{
+    overflow: hidden;
+}
+.news-alpha{
+    border : 1px solid #a7a4a4;
+    border-radius: 15px;
+    overflow: hidden;
+
+}
+.news-alpha:hover{
+    box-shadow: 0 0 30px grey;
+    cursor: pointer;
+    
+}
+
+.news-beta{
+    float: left;
+    width: 40%;
+    margin: 0 1rem;
+}
+
+/*DOWNLOAD INTRO*/
+.download-app-intro .download-app-intro-left, .download-app-intro .download-app-intro-right{
+    width: 50%;
+    float: left;
+}
+
+
+.download-app-intro-right .qr-code,.download-app-intro-right .download-app{
+    float: right;
+    width: 40%;
+    margin : 0px auto;
+ 
+ }
+
+ /*FOOTER*/
+ 
+footer{
+    background-image: url('/image/background-highlight-function.png');
+    overflow: hidden;
+}
+
+
+
+.contact-alpha{
+	width:27%;
+	margin: 0px 2%;
+	float: left;
+}
+
+.more-links ul li{
+	list-style-type: none;
+}
+
+.more-links ul li a{
+	text-decoration: none;
+	color: #ff789e;
+	display: block;
+	margin : 0.8rem;
+}
+
+#promotion-register-text{
+	box-shadow: 4px #303030;
+	float: left;
+	width:65%;
+	padding: 0.7rem;
+}
+
+#promotion-register-submit{
+	display:block;
+	border: 1px solid #D8202A;
+	float: left;
+	background-color: #f82e67;
+	width:25%;
+	text-decoration-style: none;
+	color: #ffffff;
+	padding: 0.7rem;
+	cursor: pointer;
+	
+}
+.more-links ::-webkit-scrollbar {
+    width: 10px;
+}
+.more-links ::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: #f82e67;
+}
+.more-links ::-webkit-scrollbar-track{
+	border-radius: 10px;
+	background-color: #666464;
+}
