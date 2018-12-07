@@ -95,5 +95,5 @@ app.get('/', function (req, res) {
     res.render('trangchu');
 });
 
-app.listen(3000, () => console.log('Server da khoi dong o cong 3000'));
+app.listen(process.env.PORT || 3000, () => console.log('Server da khoi dong o cong 3000'));
 module.exports = app;
