@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 var config = require('./config/database');
-var hbs = require('express-handlebars')
+var hbs = require('express-handlebars');
+var MongoClient = require('mongodb').MongoClient;
 
 // Set up Database
 mongoose.connect(config.database, { useNewUrlParser: true });
@@ -91,9 +92,55 @@ app.use('/login', (req, res) => {
     res.render('login');
 })
 
-app.get('/', function (req, res) {
-    res.render('trangchu');
+//app.get('/', function (req, res) {
+  //  res.render('trangchu');
+//});
+
+//Tuan's Code
+
+app.get("/", function (req, res) {
+
+    MongoClient.connect(config.database, { useNewUrlParser: true }, function (err, db) {
+        var query = { list_attached: "Bé ăn" };
+        var query1 = { list_attached: "Bé mặc" };
+        var query2 = { list_attached: "Bé ngủ" };
+        var query3 = { list_attached: "Bé tắm" };
+        var dbo = db.db("mydb");
+        dbo.collection("Sanpham").find(query).toArray(function (err, result) {
+            dbo.collection("Sanpham").find(query1).toArray(function (err, result1) {
+                dbo.collection("Sanpham").find(query2).toArray(function (err, result2) {
+                    dbo.collection("Sanpham").find(query3).toArray(function (err, result3) {
+                        res.render("trangchu", { list_betam: result3, list_bengu: result2, list_bemac: result1, list_bean: result });
+                        db.close();
+                    });
+                });
+            });
+        });
+    });
 });
+
+app.get("/chitietsp/:_id", function (req, res) {
+    var title = req.params._id;
+    // title = title.split("\n")
+    // console.log(title[0])
+    var mongoClient = require('mongodb').MongoClient;
+    var url = "mongodb://localhost:27017/";
+    var query = { _id: title };
+    var test = { image: title }
+    mongoClient.connect(config.database, { useNewUrlParser: true }, function (err, db) {
+        if (err) throw err;
+        var dbo = db.db("mydb");
+        dbo.collection("Sanpham").find(test).toArray(function (err, result) {
+            if (err) throw err;
+            res.render("chitietsp", { list_Sanpham: result });
+            db.close();
+
+        });
+    });
+});
+
+
+
 
 app.listen(process.env.PORT || 3000, () => console.log('Server da khoi dong o cong 3000'));
 module.exports = app;
