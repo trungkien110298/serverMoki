@@ -46,15 +46,11 @@ var set_follow_user = require('./routes/set_follow_user');
 var app = express();
 
 // View engine setup
-// app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts/' }));
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'hbs');
-// app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
-app.set('layout','./views/layouts/layout')
-//app.use(express.static("views"));
+app.set('layout','./views/layouts/layout');
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -75,9 +71,7 @@ var storage = multer.diskStorage({
 })
 var upload = multer({ storage: storage }).single('uploadfile');
 
-/// Router
-
-
+/// Router API
 
 // Kien's API
 app.use('/api', signup);                        // Done!
@@ -105,18 +99,15 @@ app.use('/api', like_product);
 app.use('/api', set_comment_product);
 app.use('/api', set_follow_user);
 
+
+// Router Render
+
 app.use('/gioithieu', (req, res) => {
     res.render('gioithieu')
 })
 app.use('/login', (req, res) => {
     res.render('login');
 })
-
-//app.get('/', function (req, res) {
-  //  res.render('trangchu');
-//});
-
-//Tuan's Code
 
 app.get("/", function (req, res) {
 
@@ -162,7 +153,5 @@ app.get("/chitietsp/:_id", function (req, res) {
 });
 
 
-
-
-app.listen(process.env.PORT || 3000, () => console.log('Server da khoi dong o cong 3000'));
+app.listen(process.env.PORT || 3000, () => console.log('Server da khoi dong'));
 module.exports = app;
