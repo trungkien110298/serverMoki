@@ -14,7 +14,101 @@
         </script>
     </head>
     <body>
-        {{{body}}}
+       <!--Start Header-->
+         <div class = "wrap">
+                <div class = "header">
+                        <div class = "header-content">
+                            <div class= "header-content-left">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>Hotline: 19000091</span>
+                            </div>
+                            <div class= "header-content-right">
+                                <span>Chào mừng bạn đến với Moki</span>
+                                <i class="fa fa-flag-checkered" aria-hidden="true"></i>
+                                <b>|</b>
+                                <span><a href="#">Kiểm tra đơn hàng</a></span>
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                <b>|</b>
+                                <span><a href="#">Giỏ hàng</a></span>
+                                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                <b>|</b>
+                                <span><a href="/login">Đăng nhập</a></span>
+                                <span>/</span>
+                                <span><a href="#">Đăng ký</a></span>
+            
+                            </div>
+                        </div>
+                    </div>
+                    <!--END HEADER-->
+                    <!--START NAV-->
+                    <div class = "nav">
+                        <div class = "logo-brand">
+                            <img src="https://moki.vn/moki/themes/img/logo_medium.png" alt="logo">
+                        </div>
+                        <div class = "nav-content-right">
+                            <div class = "search-bar">
+                                    <form class="search-box" >
+                                        <input type="text" placeholder="Nhập sản phẩm bạn muốn tìm.." name="search">
+                                        <button type="submit"><i class="fa fa-search"></i></button>
+                                    </form>
+                            </div>
+                            
+                            <div class = "nav-bar">
+                                <ul>
+                                    <li><a class= "active" href="/">TRANG CHỦ</a></li>
+                                    <li><a href="#">GÓC CỦA MẸ</a></li>
+                                    <li><a href="/gioithieu">GIỚI THIỆU</a></li>
+                                    <li><a href="#">SHOP MOKI</a></li>
+                                    <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                 </ul>
+            
+                            </div>
+                        <div class = "clear"></div>
+                        </div>
+                        <hr>
+                    </div>
+
+         </div>
+         <!--START MAIN LOGIN-->
+         <div class = "clear"></div>
+         <div class = "login-nav">
+             <div class= "login-nav-content">
+                 <ul>
+                     <li><a href="#">1. Đăng nhập   >></a></li>
+                     <li><a href="#">2. Chọn địa chỉ   >></a></li>
+                     <li><a href="#">2. Thanh toán   >></a></li>
+                     <li><a href="#">4. Xác nhận   >></a></li>
+                     <li><a href="#">5. Hoàn thành   >></a></li>
+                 </ul>
+             </div>
+         </div>
+         
+         <div class = "login-main">
+             <div class = "login-main-content">
+                 <h4>Đăng nhập tài khoản MOKI ở đây</h4>
+                 <hr>
+                 <div class = "login-view">
+                     <div class = "login-view-content">
+                            <form action="/signin" method = "POST">
+                                <label>Số điện thoại</label>
+                                <input type="text" id="id" name="id" placeholder="Số điện thoại..">
+                                <label>Mật khẩu</label>
+                                <input type="text" id="password" name="password" placeholder="Mật khẩu..">
+                                <label for="already-have-acc"><input type="radio" name ="check-account">Đã có tài khoản, Đăng nhập</label>
+                                <label for="no-have-acc"><input type="radio" name = "check-account">Chưa có tài khoản, Đăng ký</label>
+                                <a href = "#" style = "color : #e1e1e1; float : right; padding : 5px 0px;">Quên mật khẩu?</a>
+                                <input type="submit" value="Đăng nhập" name = "login">
+                            </form>
+                     </div>
+
+
+                 </div>
+
+             </div>
+         </div>
     </body>
 
 

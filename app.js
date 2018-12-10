@@ -8,7 +8,10 @@ var morgan = require('morgan');
 var mongoose = require('mongoose');
 var config = require('./config/database');
 var hbs = require('express-handlebars');
+var ejs = require('ejs');
 var MongoClient = require('mongodb').MongoClient;
+var multer = require('multer');
+
 
 // Set up Database
 mongoose.connect(config.database, { useNewUrlParser: true });
@@ -43,10 +46,17 @@ var set_follow_user = require('./routes/set_follow_user');
 var app = express();
 
 // View engine setup
-app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts/' }));
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+// app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts/' }));
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'hbs');
+// app.use(express.static(path.join(__dirname, 'public')));
+
+app.set("view engine", "ejs");
+app.set("views", "./views");
+app.set('layout','./views/layouts/layout')
+//app.use(express.static("views"));
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -54,6 +64,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(morgan('dev'));
+
+var storage = multer.diskStorage({
+	destination: function (req, file, cb) {
+		cb(null, './upload')
+	},
+	filename: function (req, file, cb) {
+		cb(null, file.originalname)
+	}
+})
+var upload = multer({ storage: storage }).single('uploadfile');
 
 /// Router
 
@@ -100,23 +120,26 @@ app.use('/login', (req, res) => {
 
 app.get("/", function (req, res) {
 
-    MongoClient.connect(config.database, { useNewUrlParser: true }, function (err, db) {
-        var query = { list_attached: "Bé ăn" };
-        var query1 = { list_attached: "Bé mặc" };
-        var query2 = { list_attached: "Bé ngủ" };
-        var query3 = { list_attached: "Bé tắm" };
-        var dbo = db.db("webdb");
-        dbo.collection("Sanpham").find(query).toArray(function (err, result) {
-            dbo.collection("Sanpham").find(query1).toArray(function (err, result1) {
-                dbo.collection("Sanpham").find(query2).toArray(function (err, result2) {
-                    dbo.collection("Sanpham").find(query3).toArray(function (err, result3) {
-                        res.render("trangchu", { list_betam: result3, list_bengu: result2, list_bemac: result1, list_bean: result });
-                        db.close();
-                    });
-                });
-            });
-        });
-    });
+	MongoClient.connect(config.database, function (err, db) {
+		var query0 = {};
+		var query = { list_attached: "Bé ăn" };
+		var query1 = { list_attached: "Bé mặc" };
+		var query2 = { list_attached: "Bé ngủ" };
+		var query3 = { list_attached: "Bé tắm" };
+		var dbo = db.db("webdb");
+		dbo.collection("Sanpham").find(query).toArray(function (err, result) {
+			dbo.collection("Sanpham").find(query1).toArray(function (err, result1) {
+				dbo.collection("Sanpham").find(query2).toArray(function (err, result2) {
+					dbo.collection("Sanpham").find(query3).toArray(function (err, result3) {
+						dbo.collection("Sanpham").find(query0).toArray(function (err, result0) {
+							res.render("trangchu", { list: result0, list_betam: result3, list_bengu: result2, list_bemac: result1, list_bean: result });
+							db.close();
+						});
+					});
+				});
+			});
+		});
+	});
 });
 
 app.get("/chitietsp/:_id", function (req, res) {
