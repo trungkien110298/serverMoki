@@ -32,7 +32,7 @@ get_request.get('/gioithieu', (req, res) => {
     res.render('gioithieu')
 })
 get_request.get('/login', (req, res) => {
-    res.render('login');
+    res.render('loginvuongthem');
 })
 
 get_request.get("/chitietsp/:_id", function (req, res) {
@@ -49,6 +49,26 @@ get_request.get("/chitietsp/:_id", function (req, res) {
             if (err) throw err;
             res.render("chitietsp", { list_Sanpham: result });
             db.close();
+
+        });
+    });
+});
+
+
+get_request.get("/sp/sp/:_id", function (req, res) {
+    var mongoClient = require('mongodb').MongoClient;
+    var _id = req.params._id;
+
+    // id = new require('mongodb').ObjectId;
+    var query = { _id: _id };
+    mongoClient.connect(config.database, { useNewUrlParser: true }, function (err, db) {
+        if (err) throw err;
+        var dbo = db.db("webdb");
+        dbo.collection("TempSP").findOne(query, function (err, result) {
+            if (err) throw err;
+            res.render('products', {
+                data: result
+            })
 
         });
     });

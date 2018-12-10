@@ -39,6 +39,11 @@ var get_my_likes = require('./routes/get_my_likes');
 var like_product = require('./routes/like_product');
 var set_comment_product = require('./routes/set_comment_product');
 var set_follow_user = require('./routes/set_follow_user');
+var report_product = require('./routes/report_product');
+
+var get_request = require('./routes/get_request');
+var search = require('./routes/search');
+
 
 // Creat server app
 var app = express();
@@ -97,10 +102,13 @@ app.use('/api', get_my_likes);
 app.use('/api', like_product);
 app.use('/api', set_comment_product);
 app.use('/api', set_follow_user);
+app.use('/api', report_product);
 
+// Tuan's API
+
+app.use('/api', search);
 
 // Router Render
-var get_request = require('./routes/get_request');
 app.use(get_request);
 
 

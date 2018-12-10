@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googlapcdn.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+	    <div class="row">
+		    <div class="col-md-8 col-md-push-2">
+			    <table class="table table-hover">
+				    <thead>
+					    <tr class="bg-success text-hover">
+						    <td colspan="9"> Danh sách sản phẩm</td>
+						</tr>
+						<tr class="bg-primary">
+						  <th>ID</th>
+							<th>Tiêu đề</th>
+							<th>Hình ảnh</th>
+							<th>Ngày đăng</th>
+							<th>Shop</th>
+              <th>Giá</th>
+              <th>Mục</th>
+              <th>Trạng thái</th>
+              <th>Mô tả</th>
+						</tr>
+					</thead>
+					<tbody>
+            <% list_Sanpham.forEach((Sanpham)=>{%>
+					    <tr>
+						  <td> <%=Sanpham._id%> </td>
+							<td> <%=Sanpham.name%> </td>
+							<td> <img src="/image1/<%=Sanpham.image%>"> </td>
+							<td> <%=Sanpham.date%> </td>
+              <td> <%=Sanpham.shop%> </td>
+							<td> <%=Sanpham.price%> </td>
+              <td> <%=Sanpham.list_attached%> </td>
+              <td> <%=Sanpham.state%> </td>
+              <td> <%=Sanpham.discribe%> </td>
+						</tr>
+            <%})%>
+					</tbody>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -11,6 +11,8 @@ login.get('/login', function (req, res) {
 });
 
 login.post('/login', function (req, res) {
+    console.log(req.body.phonenumber);
+    console.log(req.body.password);
     User.findOne({ phonenumber: req.body.phonenumber }, function (err, user) {
         if (err) throw err;
 
