@@ -72,7 +72,7 @@ form.search-box input[type=text] {
     border: 1px solid #ff789e;
     border-radius : 25px;
     float: left;
-    width: 90%;
+    width:90%;
     background: white;
     color : grey;
 }
@@ -95,7 +95,6 @@ form.search-box::after {
     clear: both;
     display: table;
 }
-
 
 /*NAV BAR */
 
