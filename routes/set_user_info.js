@@ -1,10 +1,4 @@
 var express = require('express');
-var mongoose = require('mongoose');
-var passport = require('passport');
-var config = require('../config/database');
-var bodyParser = require('body-parser');
-require('../config/passport')(passport);
-var jwt = require('jsonwebtoken');
 var auth = require('../controllers/authController')
 var User = require('../models/user')
 
