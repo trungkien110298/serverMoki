@@ -105,7 +105,7 @@ app.get("/", function (req, res) {
         var query1 = { list_attached: "Bé mặc" };
         var query2 = { list_attached: "Bé ngủ" };
         var query3 = { list_attached: "Bé tắm" };
-        var dbo = db.db("mydb");
+        var dbo = db.db("webdb");
         dbo.collection("Sanpham").find(query).toArray(function (err, result) {
             dbo.collection("Sanpham").find(query1).toArray(function (err, result1) {
                 dbo.collection("Sanpham").find(query2).toArray(function (err, result2) {
@@ -124,12 +124,11 @@ app.get("/chitietsp/:_id", function (req, res) {
     // title = title.split("\n")
     // console.log(title[0])
     var mongoClient = require('mongodb').MongoClient;
-    var url = "mongodb://localhost:27017/";
     var query = { _id: title };
     var test = { image: title }
     mongoClient.connect(config.database, { useNewUrlParser: true }, function (err, db) {
         if (err) throw err;
-        var dbo = db.db("mydb");
+        var dbo = db.db("webdb");
         dbo.collection("Sanpham").find(test).toArray(function (err, result) {
             if (err) throw err;
             res.render("chitietsp", { list_Sanpham: result });
