@@ -77,6 +77,8 @@ form.search-box input[type=text] {
     color : grey;
 }
 
+
+
 form.search-box button {
     float: left;
     width: 10%;
@@ -203,7 +205,19 @@ form.search-box::after {
     display: block;
 
 }
+.login-view-content input[type=password]  {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #ff789e;
+    border-radius : 25px;
+    float: left;
+    width: 90%;
+    background: white;
+    color : grey;
+    margin : 0.5rem;
+    display: block;
 
+}
 .login-view-content input[type=submit]  {
     padding: 10px;
     font-size: 17px;

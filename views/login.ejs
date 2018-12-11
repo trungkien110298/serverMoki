@@ -15,6 +15,14 @@
         new WOW().init();
     </script>
     <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
         $(document).ready(function () {
 
             $("#login").click(() => {
@@ -140,12 +148,13 @@
                         <input type="text" id="id" name="phonenumber" placeholder="Số điện thoại..">
                         <label>Mật khẩu</label>
                         <input type="text" id="password" name="password" placeholder="Mật khẩu..">
-                        
-                        <label for="already-have-acc"><input type="radio" name="check-account">Đã có tài khoản, Đăng nhập</label>
+
+                        <label for="already-have-acc"><input type="radio" name="check-account">Đã có tài khoản, Đăng
+                            nhập</label>
                         <label for="no-have-acc"><input type="radio" name="check-account">Chưa có tài khoản, Đăng ký</label>
                         <a href="#" style="color : #e1e1e1; float : right; padding : 5px 0px;">Quên mật khẩu?</a>
 
-                        
+
                     </form>
                     <input type="submit" value="Đăng nhập" id="login">
                 </div>

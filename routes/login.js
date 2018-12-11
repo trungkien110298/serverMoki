@@ -17,7 +17,7 @@ login.post('/login', function (req, res) {
         if (err) throw err;
 
         if (!user) {
-            res.status(401).send({ code: 1004, message: 'Parameter value is invalid.' });
+            res.status(200).send({ code: 9995, message: 'User is not existed' });
         } else {
             // check if password matches
             user.comparePassword(req.body.password, function (err, isMatch) {
@@ -31,7 +31,7 @@ login.post('/login', function (req, res) {
                         data: [{ id: user.id, username: user.username, token: 'JWT ' + token, avatar: user.avatar }]
                     });
                 } else {
-                    res.status(401).send({ code: 1004, message: 'Parameter value is invalid.' });
+                    res.status(200).send({ code: 1004, message: 'Wrong password' });
                 }
             });
         }

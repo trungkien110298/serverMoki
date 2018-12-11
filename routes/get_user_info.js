@@ -23,8 +23,6 @@ get_user_info.post('/get_user_info', auth.isAuthenticated,
                         username: user.username,
                         phonenumber: user.phonenumber,
                         url: user.url,
-                        
-
                     }]
                 })
             }

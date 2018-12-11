@@ -113,7 +113,12 @@ var UserSchema = new Schema({
             subject: String,
             detail: String
         }
-    ]
+    ],
+    list_rate: {
+        level1: [{ product_id: String }],
+        level2: [{ product_id: String }],
+        level3: [{ product_id: String }]
+    }
 });
 
 UserSchema.pre('save', function (next) {

@@ -40,6 +40,8 @@ var like_product = require('./routes/like_product');
 var set_comment_product = require('./routes/set_comment_product');
 var set_follow_user = require('./routes/set_follow_user');
 var report_product = require('./routes/report_product');
+var set_rates = require('./routes/set_rates');
+var get_rates = require('./routes/get_rates');
 
 var get_request = require('./routes/get_request');
 var search = require('./routes/search');
@@ -103,7 +105,8 @@ app.use('/api', like_product);
 app.use('/api', set_comment_product);
 app.use('/api', set_follow_user);
 app.use('/api', report_product);
-
+app.use('/api', set_rates);
+app.use('/api', get_rates);
 // Tuan's API
 
 app.use('/api', search);
