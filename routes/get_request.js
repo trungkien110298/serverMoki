@@ -66,10 +66,21 @@ get_request.get("/sp/sp/:_id", function (req, res) {
         var dbo = db.db("webdb");
         dbo.collection("TempSP").findOne(query, function (err, result) {
             if (err) throw err;
-            res.render('products', {
+            res.render('', {
                 data: result
             })
 
+        });
+    });
+});
+
+get_request.get("/bean", function (req, res) {
+    MongoClient.connect(config.database, { useNewUrlParser: true }, function (err, db) {
+        var query = { list_attached: "Bé ăn" };
+        var dbo = db.db("webdb");
+        dbo.collection("Sanpham").find(query).toArray(function (err, result) {
+            res.render("bean", { list_bean: result });
+            db.close();
         });
     });
 });

@@ -3,7 +3,7 @@
 
 <head>
     <title>MOKI - Ứng dụng giúp các mẹ trao đổi, mua bán đồ | moki.vn</title>
-   
+
     <meta charset="UTF-8">
     <link rel="stylesheet" href="stylesheet/layoutv2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,6 +13,21 @@
 </head>
 
 <body>
+    <script>
+
+        // var socket = io.connect('http://localhost:3000')
+        $(document).ready(function () {
+
+
+            var getdata = localStorage.getItem("data")
+            data = JSON.parse(getdata)
+            if (data != undefined) {
+                document.getElementById("greeting").innerHTML = "Hello " + data.data[0].username//localStorage.data
+            }
+            //console.log("HELLO")
+
+        });
+    </script>
     <!--Start Header-->
     <div class="wrap">
         <div class="header">
@@ -31,9 +46,11 @@
                     <span><a href="#">Giỏ hàng</a></span>
                     <i class="fa fa-sign-in" aria-hidden="true"></i>
                     <b>|</b>
-                    <span><a href="/login">Đăng nhập</a></span>
-                    <span>/</span>
-                    <span><a href="/signup">Đăng ký</a></span>
+                    <span id="greeting">
+                        <span><a href="/login">Đăng nhập</a></span>
+                        <span>/</span>
+                        <span><a href="/signup">Đăng ký</a></span>
+                    </span>
 
                 </div>
             </div>
@@ -46,9 +63,9 @@
             </div>
             <div class="nav-content-right">
                 <div class="search-bar" style="margin-left: 50px;position:relative;">
-                    <form class="search-box" method = "POST" action = "/api/search" >
+                    <form class="search-box" method="POST" action="/api/search">
                         <input type="text" placeholder="Nhập sản phẩm bạn muốn tìm.." name="product_name">
-                        <button type="submit"  style="position: absolute; margin-left: -65px; margin-top: 1px;border: none;"><i
+                        <button type="submit" style="position: absolute; margin-left: -65px; margin-top: 1px;border: none;"><i
                                 class="fa fa-search"></i></button>
                     </form>
                 </div>
