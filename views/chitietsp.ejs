@@ -1,328 +1,366 @@
 <html !DOCTYPE>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="/stylesheet/layoutv3.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    </head>
 
-    <body>
-        <!--Start Header-->
-      <div class = "wrap">
-        <div class = "header">
-            <div class = "header-content">
-                <div class= "header-content-left">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                    <span>Hotline: 19000091</span>
-                </div>
-                <div class= "header-content-right">
-                    <span>Chào mừng bạn đến với MOKI</span>
-                    <i class="fa fa-flag-checkered" aria-hidden="true"></i>
-                    <b>|</b>
-                    <span><a href="#">Kiểm tra đơn hàng</a></span>
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                    <b>|</b>
-                    <span><a href="#">Giỏ hàng</a></span>
-                    <i class="fa fa-sign-in" aria-hidden="true"></i>
-                    <b>|</b>
-                    <span><a href="#">Đăng nhập</a></span>
-                    <span>/</span>
-                    <span><a href="#">Đăng ký</a></span>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/stylesheet/layoutv3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-                </div>
-            </div>
-        </div>
-        <!--END HEADER-->
-        <!--START NAV-->
-        <div class = "nav">
-            <div class = "logo-brand">
-                <img src="https://moki.vn/moki/themes/img/logo_medium.png" alt="logo">
-            </div>
-            <div class = "nav-content-right">
-              <div class = "search-bar"style="margin-left: 50px;position:relative;">
-                      <form class="search-box" >
-                          <input type="text" placeholder="Nhập sản phẩm bạn muốn tìm.." name="search">
-                          <button type="submit" style="position: absolute; margin-left: -85px; margin-top: 2px;border: none;"><i class="fa fa-search"></i></button>
-                      </form>
-              </div>
-                <div class = "nav-bar">
-                    <ul>
-                        <li><a class= "active" href="#">TRANG CHỦ</a></li>
-                        <li><a href="#">GÓC CỦA MẸ</a></li>
-                        <li><a href="#">GIỚI THIỆU</a></li>
-                        <li><a href="#">SHOP MOKI</a></li>
-                        <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                     </ul>
-                </div>
-            </div>
-			<div class = "clear"></div>
-            <hr>
-        </div>
+</head>
+
+<body>
+	<script>
+
+		// var socket = io.connect('http://localhost:3000')
+		$(document).ready(function () {
+
+
+			var getdata = localStorage.getItem("data")
+			data = JSON.parse(getdata)
+			if (data != undefined) {
+				document.getElementById("greeting").innerHTML = "Hello " + data.data[0].username//localStorage.data
+			}
+			//console.log("HELLO")
+
+		});
+	</script>
+	<!--Start Header-->
+	<div class="wrap">
+		<div class="header">
+			<div class="header-content">
+				<div class="header-content-left">
+					<i class="fa fa-phone" aria-hidden="true"></i>
+					<span>Hotline: 19000091</span>
+				</div>
+				<div class="header-content-right">
+					<span>Chào mừng bạn đến với MOKI</span>
+					<i class="fa fa-flag-checkered" aria-hidden="true"></i>
+					<b>|</b>
+					<span><a href="#">Kiểm tra đơn hàng</a></span>
+					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					<b>|</b>
+					<span><a href="#">Giỏ hàng</a></span>
+					<i class="fa fa-sign-in" aria-hidden="true"></i>
+					<b>|</b>
+					<span id="greeting">
+						<span><a href="/login">Đăng nhập</a></span>
+						<span>/</span>
+						<span><a href="/signup">Đăng ký</a></span>
+					</span>
+
+				</div>
+			</div>
+		</div>
+		<!--END HEADER-->
+		<!--START NAV-->
+		<div class="nav">
+			<div class="logo-brand">
+				<img src="https://moki.vn/moki/themes/img/logo_medium.png" alt="logo">
+			</div>
+			<div class="nav-content-right">
+				<div class="search-bar" style="margin-left: 50px;position:relative;">
+					<form class="search-box">
+						<input type="text" placeholder="Nhập sản phẩm bạn muốn tìm.." name="search">
+						<button type="submit" style="position: absolute; margin-left: -85px; margin-top: 2px;border: none;"><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+				<div class="nav-bar">
+					<ul>
+						<li><a class="active" href="/">TRANG CHỦ</a></li>
+						<li><a href="#">GÓC CỦA MẸ</a></li>
+						<li><a href="/gioithieu">GIỚI THIỆU</a></li>
+						<li><a href="#">SHOP MOKI</a></li>
+						<li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<hr>
+		</div>
 		<!--End of niv-->
 		<!--Start Slider-->
 		<div class="slider">
-		    <div class="slider-left">
-			    <div class="slider-list">
-		            <i class="fa fa-list-ul"> DANH MỤC SẢN PHẨM</i>
-	                    <ul>
-		                    <li><a href="#">Miễn phí</a></li>
-			                <li><a href="#">Bé ăn</a><span class="fa fa-angle-double-down"></span>
-				                <ul class="list-menu">
-					                <li><a href="#">Ghế ăn bột cho bé</a></li>
-					                <li><a href="#">Bình sữa và phụ kiện</a></li>
-					                <li><a href="#">Sữa bột các loại</a></li>
-					                <li><a href="#">Bột, cháo ăn dặm</a></li>
-					                <li><a href="#">Đồ dùng ăn uống</a></li>
-					                <li><a href="#">Thực phẩm đóng hộp</a></li>
-				                </ul>
-			                </li>
-			                <li>
-				                <a href="#">Bé mặc</a><span class="fa fa-angle-double-down"></span>
-				                <ul class="list-menu">
-					                <li><a href="#">Giày dép cho bé</a></li>
-					                <li><a href="#">Mũ thời trang</a></li>
-					                <li><a href="#">Đồ sơ sinh</a></li>
-					                <li><a href="#">Phụ kiện thời trang</a></li>
-					                <li><a href="#">Thời trang cho bé</a></li>
-				                </ul>
-			                </li>
-			                <li>
-				                <a href="#">Bé ngủ</a><span class="fa fa-angle-double-down"></span>
-				                <ul class="list-menu">
-					                <li><a href="#">Giường ngủ</a></li>
-					                <li><a href="#">Nôi sách em bé</a></li>
-					                <li><a href="#">Chăn ga, gối đệm</a></li>
-					                <li><a href="#">Bộ quây cũi</a></li>
-					                <li><a href="#">Nôi điện tự động</a></li>
-					                <li><a href="#">Cũi cho bé</a></li>
-					                <li><a href="#">Ghế rung cho bé</a></li>
-					                <li><a href="#">Chặn giường</a></li>
-					                <li><a href="#">Nôi ngủ chung giường</a></li>
-					                <li><a href="#">Đèn ngủ</a></li>
-				                </ul>
-			                </li>
-			                <li>
-				                <a href="#">Bé tắm</a><span class="fa fa-angle-double-down"></span>
-			                </li>
-			                <li>
-				                <a href="#">Bé vệ sinh</a><span class="fa fa-angle-double-down"></span>
-			                </li>
-			                <li>
-				                <a href="#">Bé Khỏe-An toàn</a><span class="fa fa-angle-double-down"></span>
-			                </li>
-			                <li>
-				                <a href="#">Bé đi ra ngoài</a><span class="fa fa-angle-double-down"></span>
-			                </li>
-			                <li>
-				                <a href="#">Bé chơi mà học</a><span class="fa fa-angle-double-down"></span>
-			                </li>
-			                <li>
-				                <a href="#">Dành cho mẹ</a><span class="fa fa-angle-double-down"></span>
-			               </li>
-			                <li>
-				                <a href="#">Đồ dùng gia đình</a><span class="fa fa-angle-double-down"></span>
-			                </li>
-			                <li>
-				                <a href="#">Sản phẩm khác</a>
-			                </li>
-		                </ul>
+			<div class="slider-left">
+				<div class="slider-list">
+					<i class="fa fa-list-ul"> DANH MỤC SẢN PHẨM</i>
+					<ul>
+						<li><a href="#">Miễn phí</a></li>
+						<li><a href="#">Bé ăn</a><span class="fa fa-angle-double-down"></span>
+							<ul class="list-menu">
+								<li><a href="#">Ghế ăn bột cho bé</a></li>
+								<li><a href="#">Bình sữa và phụ kiện</a></li>
+								<li><a href="#">Sữa bột các loại</a></li>
+								<li><a href="#">Bột, cháo ăn dặm</a></li>
+								<li><a href="#">Đồ dùng ăn uống</a></li>
+								<li><a href="#">Thực phẩm đóng hộp</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Bé mặc</a><span class="fa fa-angle-double-down"></span>
+							<ul class="list-menu">
+								<li><a href="#">Giày dép cho bé</a></li>
+								<li><a href="#">Mũ thời trang</a></li>
+								<li><a href="#">Đồ sơ sinh</a></li>
+								<li><a href="#">Phụ kiện thời trang</a></li>
+								<li><a href="#">Thời trang cho bé</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Bé ngủ</a><span class="fa fa-angle-double-down"></span>
+							<ul class="list-menu">
+								<li><a href="#">Giường ngủ</a></li>
+								<li><a href="#">Nôi sách em bé</a></li>
+								<li><a href="#">Chăn ga, gối đệm</a></li>
+								<li><a href="#">Bộ quây cũi</a></li>
+								<li><a href="#">Nôi điện tự động</a></li>
+								<li><a href="#">Cũi cho bé</a></li>
+								<li><a href="#">Ghế rung cho bé</a></li>
+								<li><a href="#">Chặn giường</a></li>
+								<li><a href="#">Nôi ngủ chung giường</a></li>
+								<li><a href="#">Đèn ngủ</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Bé tắm</a><span class="fa fa-angle-double-down"></span>
+						</li>
+						<li>
+							<a href="#">Bé vệ sinh</a><span class="fa fa-angle-double-down"></span>
+						</li>
+						<li>
+							<a href="#">Bé Khỏe-An toàn</a><span class="fa fa-angle-double-down"></span>
+						</li>
+						<li>
+							<a href="#">Bé đi ra ngoài</a><span class="fa fa-angle-double-down"></span>
+						</li>
+						<li>
+							<a href="#">Bé chơi mà học</a><span class="fa fa-angle-double-down"></span>
+						</li>
+						<li>
+							<a href="#">Dành cho mẹ</a><span class="fa fa-angle-double-down"></span>
+						</li>
+						<li>
+							<a href="#">Đồ dùng gia đình</a><span class="fa fa-angle-double-down"></span>
+						</li>
+						<li>
+							<a href="#">Sản phẩm khác</a>
+						</li>
+					</ul>
 				</div>
 				<img src="https://moki.vn/files/bannerhome/e861a99a5e9f9936516459da3afdbb0b.jpg">
 
 				<div class="clear"></div>
-				
-		    </div>
-		    <div class="slider-right">
-			   <div class="product">
-               <% list_Sanpham.forEach((Sanpham)=>{%>
-			        <div class="product-img">
-					    <img src="/image/<%=Sanpham.image%>">
+
+			</div>
+			<div class="slider-right">
+				<div class="product">
+					<% list_Sanpham.forEach((Sanpham)=>{%>
+					<div class="product-img">
+						<img src="/image/<%=Sanpham.image%>">
 					</div>
 					<div class="product-content">
-					    <div class="product-content1">
+						<div class="product-content1">
 
-						    <p><%=Sanpham.name%></p>
+							<p>
+								<%=Sanpham.name%>
+							</p>
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star-o"></i>
-						    <h2> <%=Sanpham.price%></h2>
+							<h2>
+								<%=Sanpham.price%>
+							</h2>
 						</div>
 						<div class="product-content2">
-						  <p>Sản phẩm từ shop:</p><p class= style="color:#ff789e"><%=Sanpham.shop%></p>
-							<p>Ngày tham gia:</p><p style="color:#ff789e"><%=Sanpham.date%></p>
+							<p>Sản phẩm từ shop:</p>
+							<p class=style="color:#ff789e">
+								<%=Sanpham.shop%>
+							</p>
+							<p>Ngày tham gia:</p>
+							<p style="color:#ff789e">
+								<%=Sanpham.date%>
+							</p>
 						</div>
 						<div class="product-content3">
-						  <i class="fa fa-bullseye"></i>
-              <p>Trạng thái:</p>
-              <p style="color:#ff789e"><%=Sanpham.state%></p>
+							<i class="fa fa-bullseye"></i>
+							<p>Trạng thái:</p>
+							<p style="color:#ff789e">
+								<%=Sanpham.state%>
+							</p>
 							<i class="fa fa-folder"></i>
-              <p>Thuộc danh mục:</p>
-							<p style="color:#ff789e"><%=Sanpham.list_attached%></p>
+							<p>Thuộc danh mục:</p>
+							<p style="color:#ff789e">
+								<%=Sanpham.list_attached%>
+							</p>
 							<i class="fa fa-tags"></i>
-              <p>	Discribe:</p>
-              <p style="color:#ff789e"><%=Sanpham.discribe%></p>
+							<p> Discribe:</p>
+							<p style="color:#ff789e">
+								<%=Sanpham.discribe%>
+							</p>
 						</div>
 						<div class="product-content4">
 
-                                <button type="submit" class="box"><p>MUA NGAY</p></button>
+							<button type="submit" class="box">
+								<p>MUA NGAY</p>
+							</button>
 
 						</div>
 					</div>
-          <%})%>
-			   </div>
+					<%})%>
+				</div>
 			</div>
 		</div>
 		<!--End Slider-->
 		<!--End Slider-->
-        <!--Start delivery-->
-        <div class="delivery">
-	        <div class="free-delivery">
-		        <div class="free-delivery-image">
-			        <img src="https://wolfgaming.org/wp-content/uploads/2016/02/Delivery-Icon.png">
-		        </div>
-		        <div class="free-delivery-content">
-			        <h1>Free Delivery</h1>
-			        <p>Maecenas imperdiet sagittis enim</p>
-		        </div>
-	        </div>
-	        <div class="days-free-returns">
-		        <div class="days-free-returns-image">
-			        <img src="https://png.icons8.com/metro/1600/overtime.png">
-		        </div>
-		        <div class="days-free-returns-content">
-			        <h1>Days Free Returns</h1>
-			        <p>Maecenas imperdiet sagittis enim</p>
-		        </div>
-	        </div>
-	        <div class="cash-on-delivery">
-		        <div class="cash-on-delivery-image">
-			        <img src="https://cdn1.iconfinder.com/data/icons/finance-vol-3/48/145-512.png">
-		        </div>
-		        <div class="cash-on-delivery-content">
-			        <h1>Cash On Delivery</h1>
-			        <p>Maecenas imperdiet sagittis enim</p>
-		        </div>
-	        </div>
-        </div>
+		<!--Start delivery-->
+		<div class="delivery">
+			<div class="free-delivery">
+				<div class="free-delivery-image">
+					<img src="https://wolfgaming.org/wp-content/uploads/2016/02/Delivery-Icon.png">
+				</div>
+				<div class="free-delivery-content">
+					<h1>Free Delivery</h1>
+					<p>Maecenas imperdiet sagittis enim</p>
+				</div>
+			</div>
+			<div class="days-free-returns">
+				<div class="days-free-returns-image">
+					<img src="https://png.icons8.com/metro/1600/overtime.png">
+				</div>
+				<div class="days-free-returns-content">
+					<h1>Days Free Returns</h1>
+					<p>Maecenas imperdiet sagittis enim</p>
+				</div>
+			</div>
+			<div class="cash-on-delivery">
+				<div class="cash-on-delivery-image">
+					<img src="https://cdn1.iconfinder.com/data/icons/finance-vol-3/48/145-512.png">
+				</div>
+				<div class="cash-on-delivery-content">
+					<h1>Cash On Delivery</h1>
+					<p>Maecenas imperdiet sagittis enim</p>
+				</div>
+			</div>
+		</div>
 
-        <!--End delivery-->
-        <!--Start footer-->
-        <div class="footer">
-	        <div class="footer-info">
-		        <div class="footer-info1">
-			        <p> Hỏi và đáp</p>
-		        </div>
-		    <div class="footer-info2">
-			    <p> Điều khoản sử dụng</p>
-		    </div>
-		    <div class="footer-info3">
-			    <p> Bảo mật thông tin khách hàng</p>
-		    </div>
-		    <div class="footer-info4">
-			    <p> Giải quyết khiếu nại, tranh chấp</p>
-		    </div>
-		    <div class="footer-info5">
-			    <p> Quy chế hoạt động</p>
-		    </div>
-	    </div>
-		<div class="clear"></div>
-	    <div class="footer-contact">
-		    <div class="footer-contact1">
-			    <div class="footer-contact1a">
-			        <img src="https://moki.vn/moki/themes/img/logo_big.png">
-			        <p>CÔNG TY CỔ PHẦN MOKI
-			        <br>
-			        Giấy CNĐKDN: 0107370701 - Ngày cấp: 24/03/2016.
-			        <br>
-			        Cơ quan cấp: Phòng Đăng ký kinh doanh Sở Kế hoạch và Đầu tư Thành phố Hà Nội.
-			        </p>
-			        </div>
-			        <div class="footer-contact1b">
-			        <p>Đăng ký nhận thông tin ưu đãi và khuyến mãi khủng từ MOKI</p>
-				<div class="email">
-					<form class="email-form1">
-					   <input type="text" placeholder="  Nhập email của bạn" class="text-search"/>
-				    </form>
-				    <form class="email-form2">
-					    <button type="submit" class="email-botton">Đăng ký</button>
-				    </form>
+		<!--End delivery-->
+		<!--Start footer-->
+		<div class="footer">
+			<div class="footer-info">
+				<div class="footer-info1">
+					<p> Hỏi và đáp</p>
+				</div>
+				<div class="footer-info2">
+					<p> Điều khoản sử dụng</p>
+				</div>
+				<div class="footer-info3">
+					<p> Bảo mật thông tin khách hàng</p>
+				</div>
+				<div class="footer-info4">
+					<p> Giải quyết khiếu nại, tranh chấp</p>
+				</div>
+				<div class="footer-info5">
+					<p> Quy chế hoạt động</p>
 				</div>
 			</div>
-		</div>
-		<div class="footer-contact2">
-			<h1> LIÊN HỆ</h1>
-			<div class="place">
-				<div class="place-icon">
-					<i class="fa fa-map-marker"></i>
+			<div class="clear"></div>
+			<div class="footer-contact">
+				<div class="footer-contact1">
+					<div class="footer-contact1a">
+						<img src="https://moki.vn/moki/themes/img/logo_big.png">
+						<p>CÔNG TY CỔ PHẦN MOKI
+							<br>
+							Giấy CNĐKDN: 0107370701 - Ngày cấp: 24/03/2016.
+							<br>
+							Cơ quan cấp: Phòng Đăng ký kinh doanh Sở Kế hoạch và Đầu tư Thành phố Hà Nội.
+						</p>
+					</div>
+					<div class="footer-contact1b">
+						<p>Đăng ký nhận thông tin ưu đãi và khuyến mãi khủng từ MOKI</p>
+						<div class="email">
+							<form class="email-form1">
+								<input type="text" placeholder="  Nhập email của bạn" class="text-search" />
+							</form>
+							<form class="email-form2">
+								<button type="submit" class="email-botton">Đăng ký</button>
+							</form>
+						</div>
+					</div>
 				</div>
-				<div class="place-content">
-					<h3>TRỤ SỞ CHÍNH:</h3>
-					<p>6/50, đường Lĩnh Nam, Hoàng Mai, Hà Nội</p>
-					<h3>ĐỊA CHỈ GIAO DỊCH:</h3>
-					<p>Tầng 10, Tòa nhà ZenTower, 12 Khuất Duy Tiến, Thanh Xuân Trung, Thanh Xuân, Hà Nội</p>
+				<div class="footer-contact2">
+					<h1> LIÊN HỆ</h1>
+					<div class="place">
+						<div class="place-icon">
+							<i class="fa fa-map-marker"></i>
+						</div>
+						<div class="place-content">
+							<h3>TRỤ SỞ CHÍNH:</h3>
+							<p>6/50, đường Lĩnh Nam, Hoàng Mai, Hà Nội</p>
+							<h3>ĐỊA CHỈ GIAO DỊCH:</h3>
+							<p>Tầng 10, Tòa nhà ZenTower, 12 Khuất Duy Tiến, Thanh Xuân Trung, Thanh Xuân, Hà Nội</p>
+						</div>
+					</div>
+					<div class="hotline">
+						<div class="hotline-icon">
+							<i class="fa fa-phone"></i>
+						</div>
+						<div class="place-content">
+							<p>Hotline: 1900.636.779</p>
+						</div>
+					</div>
+					<div class="time">
+						<div class="time-icon">
+							<i class="fa fa-clock-o"></i>
+						</div>
+						<div class="time-content">
+							<p>Thứ 2 - Thứ 6:8h00 - 12h00, 13h00 - 17h00</p>
+							<p>Thứ 7:8h00 - 12h00</p>
+						</div>
+					</div>
+					<div class="email">
+						<div class="email-icon">
+							<i class="fa fa-envelope"></i>
+						</div>
+						<div class="email-content">
+							<p>hotro@moki.vn</p>
+						</div>
+					</div>
+					<div class="website">
+						<div class="website-icon">
+							<i class="fa fa-globe"></i>
+						</div>
+						<div class="website-content">
+							<p>www.moki.vn</p>
+						</div>
+					</div>
+				</div>
+				<div class="footer-contact3">
+					<h1>CÁC DANH MỤC LIÊN KẾT</h1>
+					<ul>
+						<li><a href="#">Miễn phí</a></li>
+						<li><a href="#">Bé ăn</a></li>
+						<li><a href="#">Bé mặc</a></li>
+						<li><a href="#">Bé ngủ</a></li>
+						<li><a href="#">Bé tắm</a></li>
+						<li><a href="#">Bé vệ sinh</a></li>
+						<li><a href="#">Bé Khỏe-An toàn</a></li>
+						<li><a href="#">Bé đi ra ngoài</a></li>
+						<li><a href="#">Bé chơi mà học</a></li>
+						<li><a href="#">Dành cho mẹ</a></li>
+						<li><a href="#">Đồ dùng gia đình</a></li>
+						<li><a href="#">Sản phẩm khác</a></li>
+					</ul>
 				</div>
 			</div>
-			<div class="hotline">
-				<div class="hotline-icon">
-					<i class="fa fa-phone"></i>
-				</div>
-				<div class="place-content">
-					<p>Hotline: 1900.636.779</p>
-				</div>
-			</div>
-			<div class="time">
-				<div class="time-icon">
-					<i class="fa fa-clock-o"></i>
-				</div>
-				<div class="time-content">
-					<p>Thứ 2 - Thứ 6:8h00 - 12h00, 13h00 - 17h00</p>
-					<p>Thứ 7:8h00 - 12h00</p>
-				</div>
-			</div>
-			<div class="email">
-				<div class="email-icon">
-				   <i class="fa fa-envelope"></i>
-				</div>
-				<div class="email-content">
-				   <p>hotro@moki.vn</p>
-				</div>
-			</div>
-			<div class="website">
-				<div class="website-icon">
-					<i class="fa fa-globe"></i>
-				</div>
-				<div class="website-content">
-					<p>www.moki.vn</p>
-				</div>
-			</div>
-		</div>
-		<div class="footer-contact3">
-			<h1>CÁC DANH MỤC LIÊN KẾT</h1>
-		   <ul>
-		   <li><a href="#">Miễn phí</a></li>
-		   <li><a href="#">Bé ăn</a></li>
-		   <li><a href="#">Bé mặc</a></li>
-		   <li><a href="#">Bé ngủ</a></li>
-		   <li><a href="#">Bé tắm</a></li>
-		   <li><a href="#">Bé vệ sinh</a></li>
-		   <li><a href="#">Bé Khỏe-An toàn</a></li>
-		   <li><a href="#">Bé đi ra ngoài</a></li>
-		   <li><a href="#">Bé chơi mà học</a></li>
-		   <li><a href="#">Dành cho mẹ</a></li>
-		   <li><a href="#">Đồ dùng gia đình</a></li>
-		   <li><a href="#">Sản phẩm khác</a></li>
-			</ul>
 		</div>
 	</div>
-</div>
-</div>
-<!--End footer-->
-       </div>
-    </body>
+	<!--End footer-->
+	</div>
+</body>
+
 </html>

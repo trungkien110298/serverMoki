@@ -12,6 +12,21 @@
 </head>
 
 <body>
+		<script>
+
+				// var socket = io.connect('http://localhost:3000')
+				$(document).ready(function () {
+		
+		
+					var getdata = localStorage.getItem("data")
+					data = JSON.parse(getdata)
+					if (data != undefined) {
+						document.getElementById("greeting").innerHTML = "Hello " + data.data[0].username//localStorage.data
+					}
+					//console.log("HELLO")
+		
+				});
+			</script>
 	<!--Start Header-->
 	<div class="wrap">
 		<div class="header">
@@ -30,9 +45,11 @@
 					<span><a href="#">Giỏ hàng</a></span>
 					<i class="fa fa-sign-in" aria-hidden="true"></i>
 					<b>|</b>
-					<span><a href="/login">Đăng nhập</a></span>
-					<span>/</span>
-					<span><a href="/signup">Đăng ký</a></span>
+					<span id="greeting">
+							<span><a href="/login">Đăng nhập</a></span>
+							<span>/</span>
+							<span><a href="/signup">Đăng ký</a></span>
+						</span>
 
 				</div>
 			</div>
@@ -223,7 +240,7 @@
 
 							<% } else {list_Sanpham.forEach((Sanpham)=>{%>
 							<th style="display:inline-block; padding-left:30px;" class="table-listproduct">
-								<a href="/sp/sp/<%= Sanpham._id%>"><img id="0" src="/image/<%= Sanpham.image%>" width="250px" height="250px"></a><br>
+								<a href="/chitietsp/<%- Sanpham.image%>"><img id="0" src="/image/<%= Sanpham.image%>" width="250px" height="250px"></a><br>
 								<span class="ten" id="ten-1">
 									<%= Sanpham.name%></span><br>
 								<span style="color:#ff789e; font-size: 28px;" class="gia" id="gia-1">

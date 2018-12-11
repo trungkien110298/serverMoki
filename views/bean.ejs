@@ -8,6 +8,21 @@
     </head>
 
     <body>
+			<script>
+
+					// var socket = io.connect('http://localhost:3000')
+					$(document).ready(function () {
+			
+			
+						var getdata = localStorage.getItem("data")
+						data = JSON.parse(getdata)
+						if (data != undefined) {
+							document.getElementById("greeting").innerHTML = "Hello " + data.data[0].username//localStorage.data
+						}
+						//console.log("HELLO")
+			
+					});
+				</script>
         <!--Start Header-->
       <div class = "wrap">
         <div class = "header">
@@ -26,9 +41,11 @@
                     <span><a href="#">Giỏ hàng</a></span>
                     <i class="fa fa-sign-in" aria-hidden="true"></i>
                     <b>|</b>
-                    <span><a href="/login">Đăng nhập</a></span>
-                    <span>/</span>
-                    <span><a href="#">Đăng ký</a></span>
+					<span id="greeting">
+							<span><a href="/login">Đăng nhập</a></span>
+							<span>/</span>
+							<span><a href="/signup">Đăng ký</a></span>
+						</span>
 
                 </div>
             </div>
