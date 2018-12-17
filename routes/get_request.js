@@ -34,6 +34,9 @@ get_request.get('/gioithieu', (req, res) => {
 get_request.get('/login', (req, res) => {
     res.render('loginvuongthem');
 })
+get_request.get('/signup', (req, res) => {
+    res.render('signup');
+})
 
 get_request.get("/chitietsp/:_id", function (req, res) {
     var title = req.params._id;

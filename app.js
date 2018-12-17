@@ -45,7 +45,7 @@ var get_rates = require('./routes/get_rates');
 
 var get_request = require('./routes/get_request');
 var search = require('./routes/search');
-
+var search_json = require('./routes/search_json');
 
 // Creat server app
 var app = express();
@@ -110,7 +110,7 @@ app.use('/api', get_rates);
 // Tuan's API
 
 app.use('/api', search);
-
+app.use(search_json);
 // Router Render
 app.use(get_request);
 

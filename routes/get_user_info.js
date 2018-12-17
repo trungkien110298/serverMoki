@@ -1,5 +1,5 @@
 var express = require('express');
-var auth = require('../controllers/authController')
+var auth = require('../controllers/authController_')
 var User = require('../models/user')
 
 
@@ -15,16 +15,51 @@ get_user_info.post('/get_user_info', auth.isAuthenticated,
                     data: []
                 });
             } else {
-                res.json({
-                    code: 1000, message: 'OK',
-                    data: [{
-                        id: user.id,
-                        email: user.email,
-                        username: user.username,
-                        phonenumber: user.phonenumber,
-                        url: user.url,
-                    }]
-                })
+                if (req.id){
+                    res.json({
+                        code: 1000, message: 'OK',
+                        data: [{
+                            id: user.id,
+                            email: user.email,
+                            username: user.username,
+                            phonenumber: user.phonenumber,
+                            url: user.url,
+                            created: user.created,
+                            status: user.status,
+                            avatar: user.avatar,
+                            cover_image: user.cover_image,
+                            cover_image_web: user.cover_image_web,
+                            firstname: user.firstname,
+                            lastname: user.lastname,
+                            address: user.address,
+                            city: user.city,
+                            rate_lv1: 1,
+                            rate_lv2: 1,
+                            rate_lv3: 0,
+                            online: 1,
+                        }]
+                    })
+                } else
+                {
+                    res.json({
+                        code: 1000, message: 'OK',
+                        data: [{
+                            id: user.id,
+                            username: user.username,
+                            url: user.url,
+                            created: user.created,
+                            status: user.status,
+                            avatar: user.avatar,
+                            cover_image: user.cover_image,
+                            cover_image_web: user.cover_image_web,
+                            rate_lv1: 1,
+                            rate_lv2: 1,
+                            rate_lv3: 0,
+                            online: 1,
+                        }]
+                    })
+                }
+                
             }
         });
 

@@ -55,6 +55,9 @@ var UserSchema = new Schema({
         type: Number,
         default: -1
     },
+    created: {
+        type: String
+    },
     setting: {
         auto_with_draw: {
             type: Number,
